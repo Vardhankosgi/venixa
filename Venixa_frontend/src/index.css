@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 97%;
+    --foreground: 20 25% 12%;
+
+    --card: 30 20% 99%;
+    --card-foreground: 20 25% 12%;
+
+    --popover: 30 20% 99%;
+    --popover-foreground: 20 25% 12%;
+
+    --primary: 24 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 60% 92%;
+    --secondary-foreground: 20 25% 12%;
+
+    --muted: 30 15% 93%;
+    --muted-foreground: 20 10% 45%;
+
+    --accent: 36 70% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 24 80% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 20 20% 8%;
+    --sidebar-foreground: 30 15% 85%;
+    --sidebar-primary: 24 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 15% 15%;
+    --sidebar-accent-foreground: 30 15% 90%;
+    --sidebar-border: 20 10% 18%;
+    --sidebar-ring: 24 80% 55%;
+
+    --saffron: 24 80% 50%;
+    --gold: 42 85% 55%;
+    --vermillion: 8 75% 48%;
+    --temple-red: 0 65% 42%;
+    --sacred-green: 150 35% 40%;
+    --sky-blue: 205 65% 55%;
+    --cream: 38 40% 95%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .gradient-saffron {
+    background: linear-gradient(135deg, hsl(24 80% 50%), hsl(36 70% 50%));
+  }
+  .gradient-sacred {
+    background: linear-gradient(135deg, hsl(24 80% 50%), hsl(8 75% 48%));
+  }
+  .text-gradient-saffron {
+    background: linear-gradient(135deg, hsl(24 80% 50%), hsl(42 85% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-lg;
+  }
+}
